@@ -1,0 +1,1 @@
+start chrome.exe --new-window --window-position=2000,100 --window-size=1350,1020 --user-data-dir="D:/js-year-calendar/Profiles/1" https://z9fd92wywllknewyhenrog-on.drv.tw/HostingFolder/YearCalendar/index.html

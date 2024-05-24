@@ -1,0 +1,236 @@
+@import url('https://font.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+	/* color: white; */
+	border-radius: 5px;
+}
+body
+{
+	background: rgb(0,0,0);
+	background-image: url('blue-rose.jpg');
+	background-size: cover;
+
+}
+.calendar
+{
+	padding: 20px 40px;
+}
+
+.calendar .calendar-header 
+{
+	color: white;
+}
+.months-container
+{
+	justify-content: center;
+	gap: 40px;
+}
+.calendar .months-container .month-container
+{
+	background: rgba(0,0,0,0.25);
+	padding: 20px;
+	min-width: 280ps;
+	box-shadow: 15px 15px 40px rgba(0,0,0,0.5);
+	color: white;
+}
+.calendar table.month th.month-title
+{
+	font-size: 1.9em;
+	font-weight: 200;
+}
+
+.event-tooltip-content {
+  padding: 0;
+}
+
+.event-tooltip-content:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.tippy-tooltip {
+  padding: 0;
+}
+
+/* pay days */
+.calendar table.month tr td.day[style="background-color: black;"] {
+	--label-r: 217;
+    --label-g: 63;
+    --label-b: 11;
+    --label-h: 15;
+    --label-s: 90;
+    --label-l: 44;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.9;
+    --background-alpha: 0.18;
+    --border-alpha: 0.3;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* birthdays */
+.calendar table.month tr td.day[style="background-color: darkslategray;"] {
+	--label-r: 251;
+    --label-g: 202;
+    --label-b: 4;
+    --label-h: 48;
+    --label-s: 96;
+    --label-l: 50;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.9;
+    --background-alpha: 0.18;
+    --border-alpha: 0.3;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* holidays */
+.calendar table.month tr td.day[style="background-color: midnightblue;"] {
+	--label-r: 0;
+    --label-g: 107;
+    --label-b: 117;
+    --label-h: 185;
+    --label-s: 100;
+    --label-l: 22;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.9;
+    --background-alpha: 0.18;
+    --border-alpha: 0.3;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* today */
+.calendar table.month tr td.day[style="background-color: darkblue;"] {	
+	/* from github.com	 */
+	--label-r: 53;
+    --label-g: 201;
+    --label-b: 20;
+    --label-h: 109;
+    --label-s: 81;
+    --label-l: 43;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.9;
+    --background-alpha: 0.18;
+    --border-alpha: 0.3;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+/* pay days tooltip*/
+.event-payday {
+	--label-r: 217;
+    --label-g: 63;
+    --label-b: 11;
+    --label-h: 15;
+    --label-s: 90;
+    --label-l: 44;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.6;
+    --background-alpha: 0.18;
+    --border-alpha: 0.75;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+
+    font-size: 12px;	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	padding: 2px !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* birthdays tooltip*/
+.event-birthday {
+	--label-r: 251;
+    --label-g: 202;
+    --label-b: 4;
+    --label-h: 48;
+    --label-s: 96;
+    --label-l: 50;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.6;
+    --background-alpha: 0.18;
+    --border-alpha: 0.75;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+
+    font-size: 12px;	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	padding: 2px !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* holidays tooltip*/
+.event-holiday {	
+	--label-r: 0;
+    --label-g: 107;
+    --label-b: 117;
+    --label-h: 185;
+    --label-s: 100;
+    --label-l: 22;
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.6;
+    --background-alpha: 0.18;
+    --border-alpha: 0.75;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+	
+    font-size: 12px;
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	padding: 2px !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+/* today tooltip */
+.event-today {	
+	/* from github.com	*/
+	--label-r: 69;
+    --label-g: 159;
+    --label-b: 6;
+    --label-h: 109;
+    --label-s: 81;
+    --label-l: 43; 
+	--perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+	--lightness-threshold: 0.6;
+    --background-alpha: 0.18;
+    --border-alpha: 0.75;
+    --lighten-by: calc(((var(--lightness-threshold) - var(--perceived-lightness)) * 100) * var(--lightness-switch));
+
+    font-size: 12px;	
+    background: rgba(var(--label-r), var(--label-g), var(--label-b), var(--background-alpha)) !important;
+    color: hsl(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%)) !important;
+	padding: 2px !important;
+	border: 2px solid !important;
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) + var(--lighten-by)) * 1%), var(--border-alpha)) !important;
+}
+
+
+
