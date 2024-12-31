@@ -24,9 +24,9 @@
 		  dataSource: function({year}) {
 			// Load data from Google Calendar API
 			return Promise.all([
-			fetch('https://www.googleapis.com/calendar/v3/calendars/p1ng5d9o1pc0sos2lrictsbcfc@group.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDXzPZ__vMTOwPx-tlhAsDboSfDsDG7jKw'),
-			fetch('https://www.googleapis.com/calendar/v3/calendars/dmc7e7448ev21pi3m73fnd92jg@group.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDXzPZ__vMTOwPx-tlhAsDboSfDsDG7jKw'),
-			fetch('https://www.googleapis.com/calendar/v3/calendars/en.usa.official%23holiday%40group.v.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDXzPZ__vMTOwPx-tlhAsDboSfDsDG7jKw')
+			fetch('https://www.googleapis.com/calendar/v3/calendars/p1ng5d9o1pc0sos2lrictsbcfc@group.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDjtl3VGDqVxLsNcJfwUaGrK9edPX9fZQ8'),
+			fetch('https://www.googleapis.com/calendar/v3/calendars/dmc7e7448ev21pi3m73fnd92jg@group.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDjtl3VGDqVxLsNcJfwUaGrK9edPX9fZQ8'),
+			fetch('https://www.googleapis.com/calendar/v3/calendars/en.usa.official%23holiday%40group.v.calendar.google.com/events?orderBy=startTime&singleEvents=true&key=AIzaSyDjtl3VGDqVxLsNcJfwUaGrK9edPX9fZQ8')
 
 			  ]).then(function (results){
 				return Promise.all(results.map(function (result1) {
